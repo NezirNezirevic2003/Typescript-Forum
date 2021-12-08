@@ -1,6 +1,5 @@
 import { Container, Heading } from "@chakra-ui/layout";
 import React from "react";
-import { ButtonComponent } from "../components/Button";
 import { ModalComponent } from "../components/Modal";
 import { Navbar } from "../components/Navbar";
 

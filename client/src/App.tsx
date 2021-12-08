@@ -2,15 +2,23 @@ import * as React from "react";
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import { Products } from "./pages/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { Home } from "./pages/Home";
 
+const client = new ApolloClient({
+  uri: "http://localhost:3001/graphql",
+  cache: new InMemoryCache(),
+});
+
 export const App = () => (
-  <Router>
-    <ChakraProvider theme={theme}>
-      <Routes>
-        <Route element={<Home />} path="/"></Route>
-        <Route element={<Products />} path="/products"></Route>
-      </Routes>
-    </ChakraProvider>
-  </Router>
+  <ApolloProvider client={client}>
+    <Router>
+      <ChakraProvider theme={theme}>
+        <Routes>
+          <Route element={<Home />} path="/"></Route>
+          <Route element={<Products />} path="/products"></Route>
+        </Routes>
+      </ChakraProvider>
+    </Router>
+  </ApolloProvider>
 );
