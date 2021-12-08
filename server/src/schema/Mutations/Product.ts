@@ -1,4 +1,10 @@
-import { GraphQLID, GraphQLInt, GraphQLString } from "graphql";
+import {
+  GraphQLArgs,
+  GraphQLID,
+  GraphQLInt,
+  GraphQLString,
+  graphqlSync,
+} from "graphql";
 import { Product } from "../../Entities/Product";
 import { ProductType } from "../TypeDefs/Product";
 import { StatusType } from "../TypeDefs/Status";
@@ -27,13 +33,25 @@ export const UPDATE_PRODUCT = {
   type: StatusType,
   args: {
     id: { type: GraphQLInt },
-    naam: { type: GraphQLString },
-    afbeelding: { type: GraphQLString },
-    omschrijving: { type: GraphQLString },
-    prijs: { type: GraphQLInt },
+    oudeNaam: { type: GraphQLString },
+    nieuweNaam: { type: GraphQLString },
+    oudeAfbeelding: { type: GraphQLString },
+    nieuweAfbeelding: { type: GraphQLString },
+    oudeOmschrijving: { type: GraphQLString },
+    nieuweOmschrijving: { type: GraphQLString },
+    oudePrijs: { type: GraphQLInt },
+    nieuwePrijs: { type: GraphQLInt },
   },
   async resolve(parent: any, args: any) {
-    const { id, naam, afbeelding, omschrijving, prijs } = args;
+    const {
+      id,
+      oudeNaam,
+      nieuweNaam,
+      oudeAfbeelding,
+      nieuweAfbeelding,
+      oudeOmschrijving,
+      nieuweOmschrijving,
+    } = args;
     const product = await Product.findOne({
       id: id,
     });
@@ -42,13 +60,25 @@ export const UPDATE_PRODUCT = {
       throw new Error("Product bestaat niet");
     }
 
-    if (id === id) {
-      await Product.update({ naam: naam }, { afbeelding: afbeelding }, {
-        omschrijving: omschrijving,
-      } as any);
+    const productId = product?.id;
+    const productNaam = product?.naam;
+    const productAfbeelding = product?.afbeelding;
+    const productOmschrijving = product?.omschrijving;
+
+    if (
+      id === productId &&
+      oudeNaam === productNaam &&
+      oudeAfbeelding === productAfbeelding &&
+      oudeOmschrijving === productOmschrijving
+    ) {
+      await Product.update(
+        { naam: nieuweNaam },
+        { afbeelding: nieuweAfbeelding },
+        { omschrijving: nieuweOmschrijving } as any
+      );
       return { gelukt: true, berricht: "Product is succesvol veranderd" };
     } else {
-      throw new Error("Product zijn onjuist");
+      throw new Error("Wachtwoorden zijn onjuist");
     }
   },
 };

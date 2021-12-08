@@ -1,0 +1,5 @@
+<svg id="Component_1_1" data-name="Component 1 – 1" xmlns="http://www.w3.org/2000/svg" width="327.025" height="326.135" viewBox="0 0 327.025 326.135">
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="148" cy="148" r="148" transform="translate(15.512 15.067)" fill="#319795"/>
+  <path id="Polygon_1" data-name="Polygon 1" d="M103.261,11.092a16,16,0,0,1,22.478,0l75.51,74.52C211.43,95.66,204.315,113,190.01,113H38.99C24.685,113,17.57,95.66,27.752,85.612Z" transform="translate(165.097) rotate(45)" fill="#fff"/>
+  <path id="Polygon_2" data-name="Polygon 2" d="M94.13,20.1a29,29,0,0,1,40.741,0L178.7,63.359C197.155,81.572,184.258,113,158.33,113H70.67C44.742,113,31.845,81.572,50.3,63.359Z" transform="matrix(-0.719, -0.695, 0.695, -0.719, 164.729, 326.135)" fill="#fff"/>
+</svg>

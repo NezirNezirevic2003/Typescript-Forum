@@ -33,11 +33,9 @@ export const UPDATE_PASSWORD = {
     const gebruiker = await Gebruiker.findOne({
       gebruikersnaam: gebruikersnaam,
     });
-
     if (!gebruiker) {
       throw new Error("Gebruikersnaam bestaat niet");
     }
-
     const gebruikerWachtwoord = gebruiker?.wachtwoord;
 
     if (oudeWachtwoord === gebruikerWachtwoord) {
