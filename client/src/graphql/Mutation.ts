@@ -40,3 +40,12 @@ export const CREATE_USER = gql`
     }
   }
 `;
+
+export const DELETE_PRODUCT = gql`
+  mutation deleteProduct($id: ID!) {
+    deleteProduct(id: $id) {
+      gelukt
+      berricht
+    }
+  }
+`;

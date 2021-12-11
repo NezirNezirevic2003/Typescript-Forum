@@ -4,19 +4,14 @@ import {
   TableCaption,
   Tbody,
   Td,
-  Tfoot,
   Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import React from "react";
 import { GET_ALL_USERS } from "../graphql/Query";
 
 export const ListOfUsers = () => {
-  const { data, error } = useQuery(GET_ALL_USERS);
-  if (data) {
-    console.log(data);
-  }
+  const { data } = useQuery(GET_ALL_USERS);
   return (
     <>
       <Table mt={10} variant="simple">

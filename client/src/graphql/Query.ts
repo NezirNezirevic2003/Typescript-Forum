@@ -10,3 +10,15 @@ export const GET_ALL_USERS = gql`
     }
   }
 `;
+
+export const GET_ALL_PRODUCTS = gql`
+  query getAllProducts {
+    getAllProducts {
+      id
+      naam
+      afbeelding
+      omschrijving
+      prijs
+    }
+  }
+`;
