@@ -1,6 +1,7 @@
 import { Container, Heading } from "@chakra-ui/layout";
 import React from "react";
 import { CreateUserModal } from "../components/CreateUserModal";
+import { ListOfUsers } from "../components/ListOfUsers";
 import { Navbar } from "../components/Navbar";
 
 export const Users = () => {
@@ -15,6 +16,7 @@ export const Users = () => {
           buttonText="Add User"
           modalTitle="Describe your user"
         />
+        <ListOfUsers />
       </Container>
     </>
   );
