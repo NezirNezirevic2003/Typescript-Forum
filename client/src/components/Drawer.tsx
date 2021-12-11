@@ -57,6 +57,15 @@ export const DrawerMenu = ({ header, textalign }: DrawerMenuProps) => {
                 margintop={3}
               />
             </Link>
+            <Link to="/users">
+              <ButtonComponent
+                fontsize={23}
+                text="Users"
+                color="teal"
+                width="full"
+                margintop={3}
+              />
+            </Link>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

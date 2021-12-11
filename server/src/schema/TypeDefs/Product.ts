@@ -1,9 +1,4 @@
-import {
-  GraphQLObjectType,
-  GraphQLID,
-  GraphQLString,
-  GraphQLInt,
-} from "graphql";
+import { GraphQLObjectType, GraphQLID, GraphQLString } from "graphql";
 
 export const ProductType = new GraphQLObjectType({
   name: "Product",
@@ -12,6 +7,6 @@ export const ProductType = new GraphQLObjectType({
     naam: { type: GraphQLString },
     afbeelding: { type: GraphQLString },
     omschrijving: { type: GraphQLString },
-    prijs: { type: GraphQLInt },
+    prijs: { type: GraphQLString },
   }),
 });

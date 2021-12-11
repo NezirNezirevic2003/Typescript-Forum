@@ -15,7 +15,7 @@ export const CREATE_PRODUCT = {
     naam: { type: GraphQLString },
     afbeelding: { type: GraphQLString },
     omschrijving: { type: GraphQLString },
-    prijs: { type: GraphQLInt },
+    prijs: { type: GraphQLString },
   },
   async resolve(parent: any, args: any) {
     const { naam, afbeelding, omschrijving, prijs } = args;

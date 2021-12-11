@@ -1,19 +1,19 @@
 import { Container, Heading } from "@chakra-ui/layout";
 import React from "react";
-import { CreateProductModal } from "../components/CreateProductModal";
+import { CreateUserModal } from "../components/CreateUserModal";
 import { Navbar } from "../components/Navbar";
 
-export const Products = () => {
+export const Users = () => {
   return (
     <>
       <Navbar />
       <Container maxW="container.lg">
-        <Heading mt={3}>Product dashboard</Heading>
-        <CreateProductModal
+        <Heading mt={3}>User dashboard</Heading>
+        <CreateUserModal
           mt={3}
           color="green"
-          buttonText="Add Product"
-          modalTitle="Describe your product"
+          buttonText="Add User"
+          modalTitle="Describe your user"
         />
       </Container>
     </>

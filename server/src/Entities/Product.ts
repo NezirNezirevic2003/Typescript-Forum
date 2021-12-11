@@ -15,5 +15,5 @@ export class Product extends BaseEntity {
   omschrijving?: string;
 
   @Column()
-  prijs!: number;
+  prijs!: string;
 }
