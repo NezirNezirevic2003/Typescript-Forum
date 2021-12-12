@@ -49,3 +49,12 @@ export const DELETE_PRODUCT = gql`
     }
   }
 `;
+
+export const DELETE_USER = gql`
+  mutation deleteUser($id: ID!) {
+    deleteUser(id: $id) {
+      gelukt
+      berricht
+    }
+  }
+`;

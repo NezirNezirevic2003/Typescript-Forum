@@ -39,8 +39,8 @@ export const UPDATE_PRODUCT = {
     nieuweAfbeelding: { type: GraphQLString },
     oudeOmschrijving: { type: GraphQLString },
     nieuweOmschrijving: { type: GraphQLString },
-    oudePrijs: { type: GraphQLInt },
-    nieuwePrijs: { type: GraphQLInt },
+    oudePrijs: { type: GraphQLString },
+    nieuwePrijs: { type: GraphQLString },
   },
   async resolve(parent: any, args: any) {
     const {
@@ -51,6 +51,8 @@ export const UPDATE_PRODUCT = {
       nieuweAfbeelding,
       oudeOmschrijving,
       nieuweOmschrijving,
+      oudePrijs,
+      NieuwePrijs,
     } = args;
     const product = await Product.findOne({
       id: id,
@@ -64,6 +66,7 @@ export const UPDATE_PRODUCT = {
     const productNaam = product?.naam;
     const productAfbeelding = product?.afbeelding;
     const productOmschrijving = product?.omschrijving;
+    const productPrijs = product?.prijs;
 
     if (
       id === productId &&

@@ -9,12 +9,14 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import { DELETE_PRODUCT } from "../graphql/Mutation";
 import { GET_ALL_PRODUCTS } from "../graphql/Query";
 
 export const ListOfProducts = () => {
-  const [deleteProduct, { error }] = useMutation(DELETE_PRODUCT);
   const { data } = useQuery(GET_ALL_PRODUCTS);
+  const [deleteProduct, { error }] = useMutation(DELETE_PRODUCT);
+  if (error) return <>{error}</>;
   return (
     <>
       <Table mt={10} variant="simple">
@@ -26,6 +28,8 @@ export const ListOfProducts = () => {
             <Th>Afbeelding</Th>
             <Th>Omschrijving</Th>
             <Th>Prijs</Th>
+            <Th>Verwijderen</Th>
+            <Th>Wijzigen</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -35,9 +39,15 @@ export const ListOfProducts = () => {
                 <Tr key={product.id}>
                   <Td>{product.id}</Td>
                   <Td>{product.naam}</Td>
-                  <Td>{product.afbeelding}</Td>
+                  <Td>
+                    <Image
+                      boxSize="40%"
+                      src={product.afbeelding}
+                      alt="Dan Abramov"
+                    />
+                  </Td>
                   <Td>{product.omschrijving}</Td>
-                  <Td>{product.prijs}</Td>
+                  <Td>€{product.prijs}</Td>
                   <Td>
                     <Button
                       colorScheme="red"
@@ -46,6 +56,16 @@ export const ListOfProducts = () => {
                       }}
                     >
                       Delete
+                    </Button>
+                  </Td>
+                  <Td>
+                    <Button
+                      colorScheme="yellow"
+                      // onClick={() => {
+                      //   deleteProduct({ variables: { id: product.id } });
+                      // }}
+                    >
+                      Update
                     </Button>
                   </Td>
                 </Tr>
