@@ -12,6 +12,7 @@ import {
   ModalBody,
 } from "@chakra-ui/modal";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { CREATE_USER } from "../graphql/Mutation";
 
 interface ModalProps {
@@ -75,23 +76,25 @@ export const CreateUserModal = ({
                 }}
               />
             </FormControl>
-            <Button
-              w="full"
-              mt={5}
-              colorScheme="blue"
-              type="submit"
-              onClick={() => {
-                createUser({
-                  variables: {
-                    naam: naam,
-                    gebruikersnaam: gebruikersnaam,
-                    wachtwoord: wachtwoord,
-                  },
-                });
-              }}
-            >
-              Add
-            </Button>
+            <Link to="/gebruikers">
+              <Button
+                w="full"
+                mt={5}
+                colorScheme="blue"
+                type="submit"
+                onClick={() => {
+                  createUser({
+                    variables: {
+                      naam: naam,
+                      gebruikersnaam: gebruikersnaam,
+                      wachtwoord: wachtwoord,
+                    },
+                  });
+                }}
+              >
+                Toevoegen
+              </Button>
+            </Link>
           </ModalBody>
         </ModalContent>
       </Modal>

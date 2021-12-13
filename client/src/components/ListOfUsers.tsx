@@ -22,10 +22,12 @@ export const ListOfUsers = () => {
         <TableCaption>Gebruikers</TableCaption>
         <Thead>
           <Tr>
-            <Th>Id</Th>
-            <Th>Naam</Th>
-            <Th>Gebruikersnaam</Th>
-            <Th>Wachtwoord</Th>
+            <Th textAlign="center">Id</Th>
+            <Th textAlign="center">Naam</Th>
+            <Th textAlign="center">Gebruikersnaam</Th>
+            <Th textAlign="center">Wachtwoord</Th>
+            <Th textAlign="center">Verwijderen</Th>
+            <Th textAlign="center">Wijzigen</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -33,18 +35,28 @@ export const ListOfUsers = () => {
             data.getAllUsers.map((user: any) => {
               return (
                 <Tr key={user.id}>
-                  <Td>{user.id}</Td>
-                  <Td>{user.naam}</Td>
-                  <Td>{user.gebruikersnaam}</Td>
-                  <Td>{user.wachtwoord}</Td>
-                  <Td>
+                  <Td textAlign="center">{user.id}</Td>
+                  <Td textAlign="center">{user.naam}</Td>
+                  <Td textAlign="center">{user.gebruikersnaam}</Td>
+                  <Td textAlign="center">{user.wachtwoord}</Td>
+                  <Td textAlign="center">
                     <Button
                       colorScheme="red"
                       onClick={() => {
                         deleteUser({ variables: { id: user.id } });
                       }}
                     >
-                      Delete
+                      Verwijderen
+                    </Button>
+                  </Td>
+                  <Td textAlign="center">
+                    <Button
+                      colorScheme="yellow"
+                      // onClick={() => {
+                      //   deleteProduct({ variables: { id: product.id } });
+                      // }}
+                    >
+                      Wijzigigen
                     </Button>
                   </Td>
                 </Tr>

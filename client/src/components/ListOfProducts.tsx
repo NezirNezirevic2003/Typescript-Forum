@@ -23,13 +23,13 @@ export const ListOfProducts = () => {
         <TableCaption>Producten</TableCaption>
         <Thead>
           <Tr>
-            <Th>Id</Th>
-            <Th>Naam</Th>
-            <Th>Afbeelding</Th>
-            <Th>Omschrijving</Th>
-            <Th>Prijs</Th>
-            <Th>Verwijderen</Th>
-            <Th>Wijzigen</Th>
+            <Th textAlign="center">Id</Th>
+            <Th textAlign="center">Naam</Th>
+            <Th textAlign="center">Afbeelding</Th>
+            <Th textAlign="center">Omschrijving</Th>
+            <Th textAlign="center">Prijs</Th>
+            <Th textAlign="center">Verwijderen</Th>
+            <Th textAlign="center">Wijzigen</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -37,35 +37,36 @@ export const ListOfProducts = () => {
             data.getAllProducts.map((product: any) => {
               return (
                 <Tr key={product.id}>
-                  <Td>{product.id}</Td>
-                  <Td>{product.naam}</Td>
+                  <Td textAlign="center">{product.id}</Td>
+                  <Td textAlign="center">{product.naam}</Td>
                   <Td>
                     <Image
-                      boxSize="40%"
+                      alignItems="center"
+                      boxSize="95%"
                       src={product.afbeelding}
                       alt="Dan Abramov"
                     />
                   </Td>
-                  <Td>{product.omschrijving}</Td>
-                  <Td>€{product.prijs}</Td>
-                  <Td>
+                  <Td textAlign="center">{product.omschrijving}</Td>
+                  <Td textAlign="center">€{product.prijs}</Td>
+                  <Td textAlign="center">
                     <Button
                       colorScheme="red"
                       onClick={() => {
                         deleteProduct({ variables: { id: product.id } });
                       }}
                     >
-                      Delete
+                      Verwijderen
                     </Button>
                   </Td>
-                  <Td>
+                  <Td textAlign="center">
                     <Button
                       colorScheme="yellow"
                       // onClick={() => {
                       //   deleteProduct({ variables: { id: product.id } });
                       // }}
                     >
-                      Update
+                      Wijzigigen
                     </Button>
                   </Td>
                 </Tr>

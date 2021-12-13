@@ -13,8 +13,8 @@ export const Products = () => {
         <CreateProductModal
           mt={3}
           color="green"
-          buttonText="Add Product"
-          modalTitle="Describe your product"
+          buttonText="Product toevoegen"
+          modalTitle="Omschrijf uw product"
         />
         <ListOfProducts />
       </Container>

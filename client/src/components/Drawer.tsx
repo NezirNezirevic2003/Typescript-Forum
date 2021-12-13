@@ -48,19 +48,19 @@ export const DrawerMenu = ({ header, textalign }: DrawerMenuProps) => {
                 width="full"
               />
             </Link>
-            <Link to="/products">
+            <Link to="/producten">
               <ButtonComponent
                 fontsize={23}
-                text="Products"
+                text="Producten"
                 color="teal"
                 width="full"
                 margintop={3}
               />
             </Link>
-            <Link to="/users">
+            <Link to="/gebruikers">
               <ButtonComponent
                 fontsize={23}
-                text="Users"
+                text="Gebruikers"
                 color="teal"
                 width="full"
                 margintop={3}

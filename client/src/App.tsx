@@ -17,8 +17,8 @@ export const App = () => (
       <ChakraProvider theme={theme}>
         <Routes>
           <Route element={<Home />} path="/"></Route>
-          <Route element={<Products />} path="/products"></Route>
-          <Route element={<Users />} path="/users"></Route>
+          <Route element={<Products />} path="/producten"></Route>
+          <Route element={<Users />} path="/gebruikers"></Route>
         </Routes>
       </ChakraProvider>
     </Router>

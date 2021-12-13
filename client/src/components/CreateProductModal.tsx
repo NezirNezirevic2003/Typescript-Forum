@@ -104,7 +104,7 @@ export const CreateProductModal = ({
                 });
               }}
             >
-              Add
+              Toevoegen
             </Button>
           </ModalBody>
         </ModalContent>

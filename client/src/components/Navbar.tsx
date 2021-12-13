@@ -20,13 +20,6 @@ export const Navbar: FC = () => {
             height="3rem"
             ml={3}
           />
-          <ButtonComponent
-            text="Register"
-            color="teal"
-            float="right"
-            height="3rem"
-            ml={3}
-          />
           <ColorModeSwitcher float="right" />
         </Box>
       </Container>

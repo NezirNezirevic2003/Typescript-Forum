@@ -9,12 +9,12 @@ export const Users = () => {
     <>
       <Navbar />
       <Container maxW="container.lg">
-        <Heading mt={3}>User dashboard</Heading>
+        <Heading mt={3}>Gebruiker dashboard</Heading>
         <CreateUserModal
           mt={3}
           color="green"
-          buttonText="Add User"
-          modalTitle="Describe your user"
+          buttonText="Gebruiker toevoegen"
+          modalTitle="Omschrijf uw gebruiker"
         />
         <ListOfUsers />
       </Container>
